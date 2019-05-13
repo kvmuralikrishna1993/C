@@ -17,10 +17,11 @@ int main(int argc, char const *argv[])
 	char str[] = "-2309.12E-15";
 	float value;
 	if(check_e(str)) {
-		int power = getpower(str);
-		float value = getvalue(str);
-		float realvalue = value * pow(10,power);
-		printf("%lf\n", realvalue);
+		printf("%lf\n", (getvalue(str)*pow(10,getpower(str))));
+		// int power = getpower(str);
+		// float value = getvalue(str);
+		// float realvalue = value * pow(10,power);
+		// printf("%lf\n", realvalue);
 		//output: -2309120117187500032.000000
 	} else {
 		printf("%e\n", atof(str));

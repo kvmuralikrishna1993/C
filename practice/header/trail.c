@@ -4,9 +4,9 @@
 
 int main()
 {
-	char a[4] = "abcd";
-	char b;
+	static char a[4] = "abcd";
+	char* b;
 	b = strrev(a);
-	printf("%s\n",b);
+	printf("%s\n",(char*)&b);
 	return 0;
 }
