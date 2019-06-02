@@ -13,8 +13,8 @@ int main(int argc, char const *argv[])
  	 
  	int** q = &p;	//q is p --> address
  	printf("%d\n", a);
- 	printf("%p\n", p); //returns address
- 	printf("%d\n", *p); //returns the value inside that address
- 	printf("%p\n", q); //returns the address of that pointer.
+ 	printf("%p\n", p); //returns address #pointer reference
+ 	printf("%d\n", *p); //returns the value inside that address #pointer dereference
+ 	printf("%p\n", q); //returns the address of that pointer. 
 	return 0;
 }
