@@ -191,7 +191,7 @@ int sign(int x) {
  *   Rating: 2 
  */
 int leastBitPos(int x) {
-    return 2;
+    return x & (~x + 1);
 }
 /* 
  * tc2sm - Convert from two's complement to sign-magnitude 
@@ -203,7 +203,9 @@ int leastBitPos(int x) {
  *   Rating: 4
  */
 int tc2sm(int x) {
-  return 2;
+  int flag = x >> 31;
+  int abs = (x + flag) ^ flag;
+  return (flag << 31) | abs;
 }
 /* 
  * subOK - Determine if can compute x-y without overflow
@@ -214,7 +216,8 @@ int tc2sm(int x) {
  *   Rating: 3
  */
 int subOK(int x, int y) {
-  return 2;
+  int sub= x + ~y+1;
+  return (((~(x^y))|(~(x^sub)))>>31)&0x1;
 }
 
 /* 
@@ -236,7 +239,7 @@ int negate(int x) {
  *   Rating: 1
  */
 int isTmin(int x) {
-  return 2;
+  return !((x + x) | !x);
 }
 /* 
  * float_f2i - Return bit-level equivalent of expression (int) f
@@ -266,5 +269,5 @@ int float_f2i(unsigned uf) {
  *   Rating: 2
  */
 int implication(int x, int y) {
-    return 2;
+    return !x|(!!y);
 }
