@@ -22,7 +22,7 @@ int main(int argc, char const *argv[])
 	//un comment the test cases
 	// printf("%s\n",stringcopy(s,t,3));
 	// printf("%s\n",stringcopy(s,t,4));
-	// printf("%s\n", stringcat(s,t,3));
+	printf("%s\n", stringcat(s,t,3));
 	// printf("\n\n%d\n", stringcmp(s,t,3));
 	// printf("%d\n", stringcmp(s,k,3));
 
